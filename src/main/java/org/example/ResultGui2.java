@@ -1,18 +1,14 @@
 package org.example;
 
-
-
 import javax.swing.*;
 import java.awt.*;
 
-public class JavaGui extends JFrame {
+public class ResultGui2 extends JFrame {
     GridBagLayout layout;
     Container container;
 
-
-
-    public JavaGui(){
-        setTitle("PayRoll");
+    public ResultGui2(){
+        setTitle("Table Result");
 
 
 
