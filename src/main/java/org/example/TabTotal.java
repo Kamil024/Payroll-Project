@@ -3,15 +3,16 @@ package org.example;
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 
-public class Tablee extends AbstractTableModel {
-    ArrayList<Person> person;
+public class TabTotal extends AbstractTableModel {
 
-    String[] columns ={"Name" , "Position", "Basic Saliry"};
-    public Tablee(){
+    ArrayList<Total> person;
+
+    String[] columns ={"Gross Pay" , "Total Deduction", "Net Pay"};
+    public TabTotal(){
         person = new ArrayList<>();
     }
 
-    public void adding(Person student){
+    public void adding(Total student){
         person.add(student);
         fireTableDataChanged();
     }
@@ -31,16 +32,14 @@ public class Tablee extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Person po = person.get(rowIndex);
+        Total po = person.get(rowIndex);
 
-        if(columnIndex==2){
-            return po.getFirst();
-        }else if(columnIndex ==1) {
-            return po.getLast();
-        }else if(columnIndex==0){
-            return po.getPosition();
-        }else {
-            return po.getSalary();
+        if(columnIndex==1){
+            return po.getGrossPay();
+        }else if(columnIndex == 0) {
+            return po.getTotalDeduc();
+        }else{
+            return po.getNetPay();
         }
     }
 }
