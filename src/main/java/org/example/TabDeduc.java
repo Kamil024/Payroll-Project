@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class TabDeduc extends AbstractTableModel {
     ArrayList<Deduction> person;
 
-    String[] columns ={"Name" , "Position", "Basic Saliry"};
+    String[] columns ={"SSS" , "PhilHealth", "Pag-IBIG"};
     public TabDeduc(){
         person = new ArrayList<>();
     }
@@ -33,9 +33,9 @@ public class TabDeduc extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         Deduction po = person.get(rowIndex);
 
-        if(columnIndex==1){
+        if(columnIndex==0){
             return po.getSss();
-        }else if(columnIndex == 0) {
+        }else if(columnIndex == 1) {
             return po.getPhilhealth();
         }else{
             return po.getPagibig();

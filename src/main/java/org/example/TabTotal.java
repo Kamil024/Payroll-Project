@@ -7,7 +7,7 @@ public class TabTotal extends AbstractTableModel {
 
     ArrayList<Total> person;
 
-    String[] columns ={"Gross Pay" , "Total Deduction", "Net Pay"};
+    String[] columns ={"Gross Pay" , "Net Pay", "Total Deduction"};
     public TabTotal(){
         person = new ArrayList<>();
     }
@@ -34,12 +34,12 @@ public class TabTotal extends AbstractTableModel {
     public Object getValueAt(int rowIndex, int columnIndex) {
         Total po = person.get(rowIndex);
 
-        if(columnIndex==1){
+        if(columnIndex==0){
             return po.getGrossPay();
-        }else if(columnIndex == 0) {
-            return po.getTotalDeduc();
-        }else{
+        }else if(columnIndex == 1) {
             return po.getNetPay();
+        }else{
+            return po.getTotalDeduc();
         }
     }
 }
